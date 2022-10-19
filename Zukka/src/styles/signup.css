@@ -1,0 +1,421 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(168, 168, 168);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    padding: 15px 50px 15px 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    transition: all 0.8s ease-out;
+}
+
+.menuToggler {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    left: 20px;
+}
+
+.menuToggler .bar {
+    width: 60%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 3px 0;
+}
+
+.logo {
+    font-size: 35px;
+    color: rgb(255, 255, 255, 0.9);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+
+.icon {
+    font-size: 27px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.profile {
+    margin-right: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.profile ul {
+    clip-path: inset(0 0 100% 0);
+    width: 100px;
+    height: fit-content;
+    padding: 8px 0px;
+
+    position: absolute;
+    top: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+    transition: all .8s linear;
+}
+
+.profile ul.show {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+}
+
+
+.profile ul li {
+    color: #000;
+    list-style: none;
+    margin: 10px 0;
+    opacity: 0;
+
+    transition: all .8s .3s linear;
+}
+
+.profile ul.show li {
+    opacity: 1;
+}
+
+.profile ul li a {
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.menu {
+    width: 250px;
+    height: 100vh;
+    background-color: #a2b339;
+    clip-path: circle(25px at 40px 42px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    transition: all 1s ease-out;
+}
+
+.menu.active {
+    clip-path: circle(140% at 40px 42px);
+}
+
+.menu li {
+    list-style: none;
+    margin: 40px 0;
+    position: relative;
+}
+
+.menu li::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+
+    transition: all 0.8s ease-out;
+}
+
+.menu li a {
+    z-index: 2;
+    font-size: 24px;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.menu li:hover::after {
+    width: 100%;
+}
+
+.go_to_top {
+    padding: 9px 12px;
+    border-radius: 20px;
+    background-color: #000;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(50px);
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.8s ease-out;
+}
+
+.go_to_top i {
+    color: #fff;
+    font-size: 20px;
+}
+
+.go_to_top.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+@media screen and (max-width: 1000px) {
+    .profile {
+        margin-right: 25px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        padding-right: 10px;
+    }
+
+    .logo {
+        font-size: 28px;
+        margin-top: 1px;
+    }
+
+    .icons {
+        padding-right: 10px;
+    }
+
+    .icon {
+        font-size: 24px;
+    }
+
+    .profile {
+        margin-right: 20px;
+    }
+
+    .menuToggler {
+        width: 30px;
+        height: 30px;
+    }
+
+    .menuToggler .bar {
+        width: 80%;
+        margin: 2.5px 0;
+    }
+
+    .menu {
+        clip-path: circle(25px at 35px 37px);
+    }
+}
+
+.signup {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.signup .image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup .image img {
+    width: 70%;
+}
+
+.signup form {
+    width: 60%;
+    height: auto;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup form .textos {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signup form .textos h1 {
+    font-size: 18px;
+    color: #000;
+    font-weight: 700;
+}
+
+.signup form .textos h4 {
+    font-size: 28px;
+    color: #a2b339;
+    font-weight: 700;
+}
+
+.signup form .input {
+    width: 100%;
+    height: 100%;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup form .input input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #a2b339;
+    outline: none;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #000;
+}
+
+.signup form .input input::placeholder {
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: rgb(69, 69, 69);
+}
+
+.signup form .signup {
+    margin: 20px 0 10px 0;
+    width: fit-content;
+    height: fit-content;
+    padding: 6px 20px;
+
+    border: 2px solid #a2b339;
+    border-radius: 5px;
+    outline: none;
+    background: transparent;
+
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.signup .have-account {
+    margin: 20px 0 0 0;
+}
+
+.signup .have-account p {
+    color: #000;
+    font-size: 16px;
+}
+
+.signup .have-account p a {
+    margin-left: 5px;
+    color: blue;
+}
+
+@media screen and (max-width: 1024px) {
+    .signup {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+
+    .signup form 
+    {
+        width: 100%;
+    }
+
+    .signup .image {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .signup form .textos h1 {
+        font-size: 16px;
+        color: #000;
+        font-weight: 700;
+    }
+
+    .signup form .textos h4 {
+        font-size: 22px;
+        color: #a2b339;
+        font-weight: 700;
+    }
+
+    .signup .have-account p {
+        color: #000;
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    .signup .have-account p a {
+        margin-left: 5px;
+        color: blue;
+    }
+}

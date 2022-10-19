@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 1;
+}
+
+nav {
+    width: 100%;
+    padding: 15px 50px 15px 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    transition: all 0.8s ease-out;
+}
+
+.menuToggler {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    left: 20px;
+}
+
+.menuToggler .bar {
+    width: 60%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 3px 0;
+}
+
+.logo {
+    font-size: 35px;
+    color: rgb(255, 255, 255, 0.9);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-left: auto;
+}
+
+.icon {
+    font-size: 27px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.profile {
+    margin-right: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.profile ul
+{
+    clip-path: inset(0 0 100% 0);
+    width: 100px;
+    height: fit-content;
+    padding: 8px 0px;
+
+    position: absolute;
+    top: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+    transition: all .8s linear;
+}
+
+.profile ul.show
+{
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+}
+
+
+.profile ul li
+{
+    color: #000;
+    list-style: none;
+    margin: 10px 0;
+    opacity: 0;
+
+    transition: all .8s .3s linear;
+}
+
+.profile ul.show li
+{
+    opacity: 1;
+}
+
+.profile ul li a
+{
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.menu {
+    width: 250px;
+    height: 100vh;
+    background-color: #a2b339;
+    clip-path: circle(25px at 40px 42px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    transition: all 1s ease-out;
+}
+
+.menu.active {
+    clip-path: circle(140% at 40px 42px);
+}
+
+.menu li {
+    list-style: none;
+    margin: 40px 0;
+    position: relative;
+}
+
+.menu li::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+
+    transition: all 0.8s ease-out;
+}
+
+.menu li a {
+    z-index: 2;
+    font-size: 24px;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.menu li:hover::after {
+    width: 100%;
+}
+
+.textos {
+    text-align: center;
+    z-index: 2;
+}
+
+.textos h1 {
+    font-size: 85px;
+    color: #fff;
+    font-weight: 900;
+}
+
+.textos h3 {
+    font-size: 26px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn {
+    margin: 20px auto 0 auto;
+    width: 80px;
+    height: fit-content;
+    padding: 6px 8px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #a2b339;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn a {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.go_to_top {
+    padding: 9px 12px;
+    border-radius: 20px;
+    background-color: #000;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(50px);
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.8s ease-out;
+}
+
+.go_to_top i {
+    color: #fff;
+    font-size: 20px;
+}
+
+.go_to_top.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+@media screen and (max-width: 1000px) {
+    .profile {
+        margin-right: 25px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        padding-right: 10px;
+    }
+
+    .logo {
+        font-size: 28px;
+        margin-top: 1px;
+    }
+
+    .icons {
+        padding-right: 10px;
+    }
+
+    .icon {
+        font-size: 24px;
+    }
+
+    .profile {
+        margin-right: 20px;
+    }
+
+    .menuToggler {
+        width: 30px;
+        height: 30px;
+    }
+
+    .menuToggler .bar {
+        width: 80%;
+        margin: 2.5px 0;
+    }
+
+    .menu {
+        clip-path: circle(25px at 35px 37px);
+    }
+}
