@@ -1,0 +1,34 @@
+@startuml
+
+object Categoria{
+id_categoria
+
+usuari_id
+}
+
+object Producte{
+id_producte
+fila Text
+categoria_producte
+}
+
+object LiniaComanda{
+id_liniaComanda
+
+comanda_id
+product_id
+}
+
+object Comanda{
+id_comanda
+}
+
+object Usuari{
+id_usuari
+nom_usr
+gmail
+telefono
+direccion
+}
+
+@enduml
