@@ -21,12 +21,13 @@ index.phpI
  - controller/registre.php
  - controller/login.php
 
+#### Model:
  - model/connectaDB.php
  - model/categories.php
  - model/productes-php
  - model/usuari.php
 
-
+#### View:
  - view/Ilistar categories.php
  - vlew/listar_productes_categoria.php
  - view/detall producte,php
